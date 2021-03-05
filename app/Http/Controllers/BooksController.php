@@ -14,4 +14,24 @@ class BooksController extends Controller
 Просмотр информации о книги
 ';
     }
+
+    public function showAllBooks()
+    {
+
+    }
+
+    public function addNewBook()
+    {
+
+    }
+
+    public function updateBook()
+    {
+
+    }
+
+    public function showBookInfo()
+    {
+
+    }
 }
