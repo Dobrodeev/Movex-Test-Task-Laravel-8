@@ -16,17 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/authors', function () {
-    return 'AuthorsContoller содержит информацию об авторах, должен обрабатывать след. страницы
-Просмотр списка авторов
-Добавление / редактирование автора 
-Просмотр информации автора
-';
-});
-Route::get('/books', function () {
-    return 'BooksController
-Просмотр списка всех книг
-Добавление / редактирование книги
-Просмотр информации о книги
-';
-});
+Route::get('/authors', 'App\Http\Controllers\AuthorsController@show');
+Route::get('/books', 'App\Http\Controllers\BooksController@show');
