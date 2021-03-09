@@ -21,7 +21,7 @@ class BooksSeeder extends Seeder
         foreach (range(1, 10) as $index) {
             DB::table('books')->insert([
                 'author_name' => $faker->name,
-                'year_of_publication' => $faker->year($max = '2020'),
+                'year_of_publication' => $faker->year($max = 'now'),
                 'book_name' => Hash::make('password'),
 //                'rating' => $faker->randomDigit,
                 'rating' => mt_rand(0, 10),

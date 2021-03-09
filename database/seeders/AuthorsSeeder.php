@@ -21,7 +21,7 @@ class AuthorsSeeder extends Seeder
         foreach (range(1, 10) as $index) {
             DB::table('authors')->insert([
                 'author_name' => $faker->name,
-                'birth_year' => $faker->year($max = '1993'),
+                'birth_year' => $faker->year,
                 'rating' => $faker->randomDigit,
 //                'rating' => mt_rand(0, 10),
             ]);
