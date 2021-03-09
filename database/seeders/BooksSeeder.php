@@ -19,11 +19,12 @@ class BooksSeeder extends Seeder
     {
         $faker = Faker::create();
         foreach (range(1, 10) as $index) {
-            DB::table('CreateBooksTable')->insert([
+            DB::table('books')->insert([
                 'author_name' => $faker->name,
                 'year_of_publication' => $faker->year($max = '2020'),
                 'book_name' => Hash::make('password'),
-                'rating' => $faker->randomDigit,
+//                'rating' => $faker->randomDigit,
+                'rating' => mt_rand(0, 10),
             ]);
         }
     }
