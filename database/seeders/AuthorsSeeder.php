@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Faker\Factory as Faker;
 
 class AuthorsSeeder extends Seeder
 {
@@ -16,10 +17,13 @@ class AuthorsSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('CreateAuthorsTable')->insert([
-            'author_name' => Str::random(10),
-            'birth_year' => mt_rand(1955, 1980),
-            'rating' => mt_rand(10),
-        ]);
+        $faker = Faker::create();
+        foreach (range(1, 10) as $index) {
+            DB::table('CreateAuthorsTable')->insert([
+                'author_name' => $faker->name,
+                'birth_year' => $faker->year($max = '1993'),
+                'rating' => $faker->randomDigit,
+            ]);
+        }
     }
 }
