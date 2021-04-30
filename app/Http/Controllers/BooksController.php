@@ -8,11 +8,16 @@ class BooksController extends Controller
 {
     public function show($id = '')
     {
-        return 'BooksController
+        /*return 'BooksController
 Просмотр списка всех книг
 Добавление / редактирование книги
 Просмотр информации о книги
-';
+';*/
+        $text = 'BooksController
+Просмотр списка всех книг
+Добавление / редактирование книги
+Просмотр информации о книги';
+        return view('welcome', ['text' => $text]);
     }
 
     public function showAllBooks()
