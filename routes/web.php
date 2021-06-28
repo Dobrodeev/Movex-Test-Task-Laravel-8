@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorsController;
 use App\Http\Controllers\BooksController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,5 @@ Route::get('/', function () {
 /*Route::get('/authors', 'App\Http\Controllers\AuthorsController@show');
 Route::get('/books', 'App\Http\Controllers\BooksController@show');*/
 Route::get('/authors', [AuthorsController::class, 'show']);
+Route::get('/mypage', [PageController::class, 'mypage']);
 Route::get('/books', [BooksController::class, 'show']);
