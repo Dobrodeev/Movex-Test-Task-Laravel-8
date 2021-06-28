@@ -445,6 +445,7 @@
                                     <h3>{{$blog->author_name}}</h3>
                                     <div>{!!$blog->text!!}</div>
                                 @endforeach
+                                {{$blogs->links()}}
                                 @endif
                         </div>
                     </div>
