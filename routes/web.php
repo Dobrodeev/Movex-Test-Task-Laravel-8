@@ -24,3 +24,8 @@ Route::get('/books', 'App\Http\Controllers\BooksController@show');*/
 Route::get('/authors', [AuthorsController::class, 'show']);
 Route::get('/mypage', [PageController::class, 'mypage']);
 Route::get('/books', [BooksController::class, 'show']);
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
