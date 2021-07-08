@@ -18,7 +18,7 @@ class BooksController extends Controller
     /**
      * трехзначное целое число
      */
-    public const NUMBER_3 = 121;
+    public const NUMBER_3 = 123;
     /**
      * Текст из пяти слов
      */
@@ -79,6 +79,10 @@ class BooksController extends Controller
         $integer11 = $this->integer11(integer11numbers(self::NUMBER_3));
 //        $integer11 = $this->integer11([1, 2, 1]);
         echo " Для трехзанчного числа NUMBER_3 сумма и произведение его цифр: $integer11[0], $integer11[1] <br>";
+        $integer12 = $this->integer12(integer11numbers(self::NUMBER_3));
+        echo 'Число справа налево: '.$integer12.'<br>';
+        $integer13 = $this->integer13(integer11numbers(self::NUMBER_3));
+        echo 'Первую цифру зачеркнули слева и дописали справа: '.$integer13.'<br>';
         echo '<pre>';
         print_r($integer11);
         echo '</pre>';
@@ -142,6 +146,101 @@ class BooksController extends Controller
         $product = $number[0] * $number[1] * $number[2];*/
 //        return [$sum, $product];
         return [array_sum($number), array_product($number)];
+    }
+
+    /**
+     * Дано трехзначное число. Вывести число, полученное при прочтении исходного числа справа налево.
+     * @param  array  $number
+     * @return int
+     */
+    public function integer12(array $number): int
+    {
+//        $result = (int) ($number[2].$number[1].$number[0]);
+        return (int) ($number[2].$number[1].$number[0]);
+    }
+
+    /**
+     * Дано трехзначное число. В нем зачеркнули первую слева цифру и приписали ее справа. Вывести полученное число.
+     * @param  array  $number
+     * @return int
+     */
+    public function integer13(array $number): int
+    {
+        return (int) ($number[1].$number[2].$number[0]);
+    }
+
+    /**
+     * Дано трехзначное число. В нем зачеркнули первую справа цифру приписали ее слева. Вывести полученное число.
+     * @param  array  $number
+     * @return int
+     */
+    public function integer14(array $number): int
+    {
+        return (int) ($number[2].$number[1].$number[0]);
+    }
+
+    /**
+     * Дано трехзначное число. Вывести число, полученное при перестановке цифр сотен и десятков исходного числа
+     * (например, 123 перейдет в 213).
+     * @param  array  $number
+     * @return int
+     */
+    public function integer15(array $number): int
+    {
+        return (int) ($number[1].$number[0].$number[2]);
+    }
+
+    /**
+     * Дано трехзначное число. Вывести число, полученное при перестановке цифр десятков и единиц исходного числа
+     * (например, 123 перейдет в 132).
+     * @param  array  $number
+     * @return int
+     */
+    public function integer16(array $number): int
+    {
+        return (int) ($number[0].$number[2].$number[1]);
+    }
+
+    /**
+     * Дано целое число, большее 999. Используя одну операцию деления нацело и одну операцию взятия остатка от
+     * деления, найти цифру, соответствующую разряду сотен в записи этого числа.
+     * @param  int  $number
+     * @return int
+     */
+    public function integer17(int $number): int
+    {
+        return (int) ($number / 100) % 10;
+    }
+
+    /**
+     * Дано целое число, большее 999. Используя одну операцию деления нацело и одну операцию взятия остатка от
+     * деления, найти цифру, соответствующую разряду тысяч в записи этого числа.
+     * @param  int  $number
+     * @return int
+     */
+    public function integer18(int $number): int
+    {
+        return (int) ($number / 1000);
+    }
+
+    /**
+     * С начала суток прошло N секунд (N — целое). Найти количество полных минут, прошедших с начала суток.
+     * @param  int  $seconds
+     * @return int
+     */
+    public function integer19(int $seconds): int
+    {
+        return (int) ($seconds / 60);
+    }
+
+    /**
+     * С начала суток прошло N секунд (N — целое). Найти количество полных часов, прошедших с начала суток.
+     * @param  int  $seconds
+     * @return int
+     */
+    public function integer20(int $seconds): int
+    {
+        return (int) ($seconds / 3600);
     }
 
     /**
