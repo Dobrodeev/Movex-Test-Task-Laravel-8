@@ -240,7 +240,40 @@ class BooksController extends Controller
      */
     public function integer20(int $seconds): int
     {
-        return (int) ($seconds / 3600);
+        $hours = (int) ($seconds / 3600);
+    }
+
+    /**
+     * С начала суток прошло N секунд (N — целое). Найти количество секунд, прошедших с начала последней минуты.
+     * @param  int  $seconds
+     * @return int
+     */
+    public function integer21(int $seconds): int
+    {
+        $minutes = (int) ($seconds / 60);
+        return $seconds - $minutes;
+    }
+
+    /**
+     * С начала суток прошло N секунд (N — целое). Найти количество секунд, прошедших с начала последнего часа.
+     * @param  int  $seconds
+     * @return int
+     */
+    public function integer22(int $seconds): int
+    {
+        $hours = (int) ($seconds / 3600);
+        return $seconds - $hours;
+    }
+
+    /**
+     * С начала суток прошло N секунд (N — целое). Найти количество полных минут, прошедших с начала последнего часа.
+     * @param  int  $seconds
+     * @return int
+     */
+    public function integer23(int $seconds): int
+    {
+        $hours = (int) ($seconds / 3600);
+        return (int) (($seconds - $hours) / 60);
     }
 
     /**
